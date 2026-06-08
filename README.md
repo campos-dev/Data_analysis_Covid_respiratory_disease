@@ -58,3 +58,18 @@ The `offset` represents the exact number of days between the first symptoms and 
 This project demonstrates that raw data can easily lead to catastrophic management or clinical mistakes if not properly treated (e.g., automated scaling misalignments or misinterpreting artificial 100% mortality spikes caused by small sample sizes on specific days). 
 
 By building a resilient Star Schema, implementing strict data cleansing guardrails, locking chart axes for perfect visual symmetry, and cross-referencing demographics with ICU tracking, a messy spreadsheet was turned into a strategic tool for healthcare decision-making.
+
+
+---
+
+## 📂 Project Materials & Deliverables
+
+All documentation, presentation slides, and dashboard files are organized inside the `files` directory. 
+
+👉 **[Click here to access the files folder](./files/)** to view:
+* The native Power BI workbook (`.pbix`)
+* The static PDF dashboard preview
+* The executive presentation slides
+* The complete written technical report
+
+*Note: A dedicated README is available inside the folder to guide you through each asset.*
