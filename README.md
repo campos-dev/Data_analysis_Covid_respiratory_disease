@@ -16,7 +16,7 @@ Data from medical environments often suffers from human entry mistakes or extrac
 1. **The PCR Column Trap (`RT_PCR_positive`):** This column was highly incomplete, containing only partial positive records and completely missing clear "Negative" results. Using it for filtering would have led to corrupted conclusions. 
    * *Solution:* Discarded the column for filtering and leveraged the validated `Findings` attribute instead (segmented into Pneumonia/Viral/COVID-19).
 2. **Clinical Outlier Detection:** The raw data contained physically impossible metrics due to system errors.
-   * *Solution:* Applied data guardrails. Any body temperature above 40°C or O_2 saturation above 100% was automatically converted into `null` (blank) values to prevent them from skewing the chart averages.
+   * *Solution:* Applied data guardrails. Any body temperature above 40°C or o2 saturation above 100% was automatically converted into `null` (blank) values to prevent them from skewing the chart averages.
 3. **Handling Missing Demographic Data:** The lines for body temperature and oxygen saturation for female patients in general respiratory sicknesses were broken and incomplete due to gaps in the raw dataset.
    * *Solution:* Maintained these as blanks to preserve data integrity and prevent the invention of false medical trends.
 
@@ -31,7 +31,7 @@ To ensure the dashboard is lightweight, efficient, and scalable, the data struct
 ### Why this architecture?
 A single patient can undergo multiple diagnostic images (X-rays/CT scans) on different days to monitor sickness progression. By using a Star Schema, we can track each specific exam flawlessly over time without duplicating personal data, keeping the database fast and filters functionally accurate.
 
-*Optimization:* Highly technical or unsupported laboratory metrics (e.g., WBC, neutrophil, and lymphocyte counts) were removed to prioritize hospital management KPIs and user readability.I didn’t use the atributte extubated because of the lack of data and the other attributes not described here because I didn’t need them for my analysis.
+*Optimization:* Highly technical or unsupported laboratory metrics (e.g., WBC, neutrophil, and lymphocyte counts) were removed to prioritize hospital management KPIs and user readability. I didn’t use the atributte extubated because of the lack of data and some other attributes from the original data set because I didn’t need them for my analysis.
 
 ---
 
@@ -64,10 +64,13 @@ By building a resilient Star Schema, implementing strict data cleansing guardrai
 
 ## 📂 Project Materials & Deliverables
 
-All documentation, presentation slides, and dashboard files are organized inside the `files` directory. 
+**Interactive dashboard:**
+https://app.powerbi.com/view?r=eyJrIjoiZGIyN2VlMzktY2ExZC00Mzc2LWJjZTItMDA1ODk4YzU1ZTVlIiwidCI6IjE0Y2JkNWE3LWVjOTQtNDZiYS1iMzE0LWNjMGZjOTcyYTE2MSIsImMiOjh9
+
+
+The report, presentation slides, and the static dashboard file are organized inside the `files` directory. 
 
 👉 **[Click here to access the files folder](./files/)** to view:
-* The native Power BI workbook (`.pbix`)
 * The static PDF dashboard preview
 * The executive presentation slides
 * The complete written technical report
