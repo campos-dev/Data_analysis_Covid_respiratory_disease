@@ -1,0 +1,2 @@
+# Data_analysis_Covid_respiratory_disease
+Data analysis exercise
